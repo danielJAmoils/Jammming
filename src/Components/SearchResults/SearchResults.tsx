@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './SearchResults.css'
 import TrackList from '../TrackList/TrackList'
-import { Result } from '../App/App'
+import { TrackType } from '../App/App'
 
 type SearchResultsProps = {
-    searchResults: Result[]
+    searchResults: TrackType[]
 }
 
 export default class SearchResults extends Component<SearchResultsProps> {

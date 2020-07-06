@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './Track.css'
-import { Result } from '../App/App'
+import { TrackType } from '../App/App'
 
 type TrackProps = {
     isRemoval?:boolean
-    track: Result
+    track: TrackType
 }
 
 export default class Track extends Component<TrackProps> {

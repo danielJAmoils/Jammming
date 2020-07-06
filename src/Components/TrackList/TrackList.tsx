@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './TrackList.css'
-import { Result } from '../App/App'
+import { TrackType } from '../App/App'
 import Track from '../Track/Track'
 
 type TrackListProps = {
-    tracks?: Result[]
+    tracks?: TrackType[]
 }
 
 export default class TrackList extends Component<TrackListProps> {
