@@ -5,6 +5,7 @@ import { TrackType } from '../App/App'
 
 type SearchResultsProps = {
     searchResults: TrackType[]
+    onAdd(track: TrackType): void
 }
 
 export default class SearchResults extends Component<SearchResultsProps> {
@@ -12,7 +13,7 @@ export default class SearchResults extends Component<SearchResultsProps> {
         return (
             <div className="SearchResults">
                 <h2>Results</h2>
-                <TrackList tracks={this.props.searchResults}/>
+                <TrackList tracks={this.props.searchResults} isRemoval={false} onAdd={this.props.onAdd} />
             </div>
         )
     }

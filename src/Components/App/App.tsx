@@ -69,6 +69,19 @@ export default class App extends Component<{}, AppState> {
         }
       ]
     }
+
+
+    this.addTrack = this.addTrack.bind(this)
+  }
+
+  addTrack(track:TrackType){
+    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      return;
+    }else{
+      let tracks = this.state.playlistTracks
+      tracks.push(track)
+      this.setState({playlistTracks:tracks})
+    }
   }
 
   render() {
@@ -78,7 +91,7 @@ export default class App extends Component<{}, AppState> {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} />
+            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
             <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
           </div>
         </div>
