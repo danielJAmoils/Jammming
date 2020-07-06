@@ -25,7 +25,7 @@ export default class Track extends Component<TrackProps> {
     }
 
     addTrack(){
-        if(this.props.onAdd){//deleate later and change prop to be required if it works
+        if(this.props.onAdd){
             this.props.onAdd(this.props.track)
         }
     }

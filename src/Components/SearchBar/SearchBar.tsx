@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './SearchBar.css'
-import { type } from 'os'
+import Spotify from '../../util/Spotify'
 
 type SearchBarProps = {
     onSearch(term:string):void
@@ -9,6 +9,8 @@ type SearchBarProps = {
 type SearchBarState = {
     term:string
 }
+
+Spotify.getAccessToken()
 
 export default class SearchBar extends Component<SearchBarProps, SearchBarState> {
     constructor(props: Readonly<SearchBarProps>) {
