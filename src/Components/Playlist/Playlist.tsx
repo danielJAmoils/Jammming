@@ -6,6 +6,7 @@ import { TrackType } from '../App/App'
 type PlaylistProps = {
     playlistName:string
     playlistTracks: TrackType[]
+    onRemove(track:TrackType):void
 }
 
 export default class Playlist extends Component<PlaylistProps> {
@@ -13,7 +14,7 @@ export default class Playlist extends Component<PlaylistProps> {
         return (
             <div className="Playlist">
                 <input defaultValue={'New Playlist'}/>
-                <TrackList tracks={this.props.playlistTracks}/>
+                <TrackList tracks={this.props.playlistTracks} onRemove={this.props.onRemove} isRemoval={true}/>
                 <button className="Playlist-save">SAVE TO SPOTIFY</button>
             </div>
         )

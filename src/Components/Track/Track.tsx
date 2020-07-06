@@ -6,17 +6,19 @@ type TrackProps = {
     isRemoval?:boolean
     track: TrackType
     onAdd?(track: TrackType): void
+    onRemove?(track:TrackType):void
 }
 
 export default class Track extends Component<TrackProps> {
     constructor(props: Readonly<TrackProps>){
         super(props)
         this.addTrack = this.addTrack.bind(this)
+        this.removeTrack = this.removeTrack.bind(this)
     }
 
     renderAction(){
         if(this.props.isRemoval){
-            return <button className="Track-action">-</button>
+            return <button className="Track-action" onClick={this.removeTrack}>-</button>
         }else{
             return <button className="Track-action" onClick={this.addTrack}>+</button>
         }
@@ -25,6 +27,12 @@ export default class Track extends Component<TrackProps> {
     addTrack(){
         if(this.props.onAdd){//deleate later and change prop to be required if it works
             this.props.onAdd(this.props.track)
+        }
+    }
+
+    removeTrack(){
+        if(this.props.onRemove){
+            this.props.onRemove(this.props.track)
         }
     }
 
