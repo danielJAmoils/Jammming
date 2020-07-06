@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import './Track.css'
+import { Result } from '../App/App'
 
 type TrackProps = {
-    isRemoval:boolean
+    isRemoval?:boolean
+    track: Result
 }
 
 export default class Track extends Component<TrackProps> {
@@ -17,8 +19,8 @@ export default class Track extends Component<TrackProps> {
         return (
             <div className="Track">
                 <div className="Track-information">
-                    {/* <h3><!-- track name will go here --></h3> */}
-                    {/* <p><!-- track artist will go here--> | <!-- track album will go here --></p> */}
+                    <h3>{this.props.track.name}</h3>
+                    <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
                 {/* <button className="Track-action"><!-- + or - will go here --></button> */}
             </div>
